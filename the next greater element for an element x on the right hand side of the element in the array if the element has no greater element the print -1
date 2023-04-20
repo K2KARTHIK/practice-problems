@@ -1,0 +1,31 @@
+#include<stdio.h>
+
+int main(){
+    int num;
+    printf("Please Enter the number of elements in the Array: ");
+    scanf("%d",&num);
+
+    int arr[num];
+    printf("Please Enter the elements of the Array: ");
+    for(int i=0;i<num;i++){
+        scanf("%d",&arr[i]);
+    }
+
+    int count =0;
+    int flag;
+
+    for(int i=0;i<num;i++){
+        for(int j = i+1;j<num;j++){
+            if(arr[i]<arr[j]){
+                printf("%d --> %d\n",arr[i],arr[j]);
+                count = 1;
+                break;
+            }
+        }
+        if(count == 0){
+            printf("%d  --> -1\n",arr[i]);
+        }
+        flag = i;
+    }
+    printf("%d --> -1",arr[flag]);
+}
