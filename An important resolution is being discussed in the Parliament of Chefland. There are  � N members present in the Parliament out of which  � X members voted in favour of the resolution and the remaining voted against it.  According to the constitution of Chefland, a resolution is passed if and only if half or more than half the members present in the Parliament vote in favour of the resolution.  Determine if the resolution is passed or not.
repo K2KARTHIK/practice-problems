@@ -1,0 +1,58 @@
+#include <stdio.h>
+#include <stdio.h>
+
+int main() 
+{
+    int T;
+    scanf("%d",&T);
+    while(T--)
+    {
+        int x,y;
+        scanf("%d %d",&x,&y);
+        if(x % 2 == 0)
+        {
+            int z=x/2;
+            if(y >= z)
+            {
+                printf("YES\n");
+            }
+            if(y < z)
+            {
+                printf("NO\n");
+            }
+        }
+        else if(x % 2 != 0)
+        {
+            int z=(x+1)/2;
+            if(y >= z)
+            {
+                printf("YES\n");
+            }
+            if(y < z)
+            {
+                printf("NO\n");
+            }
+        }
+    }    
+}
+
+
+
+
+
+
+
+
+input:
+4
+12 6
+9 4
+9 5
+12 0
+
+
+out put:
+YES
+NO
+YES
+NO
