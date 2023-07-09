@@ -1,0 +1,67 @@
+https://www.codechef.com/problems/CS2023_STK
+#include <stdio.h>
+
+int main(void) {
+    int T;
+    scanf("%d", &T);
+    while (T--) {
+        int N;
+        scanf("%d", &N);
+
+        int om[N], addy[N];
+        for (int i = 0; i < N; i++) {
+            scanf("%d", &om[i]);
+        }
+        for (int j = 0; j < N; j++) {
+            scanf("%d", &addy[j]);
+        }
+
+        int omMaxStreak = 0;
+        int omCurrentStreak = 0;
+        int addyMaxStreak = 0;
+        int addyCurrentStreak = 0;
+
+        for (int i = 0; i < N; i++) 
+        {
+            if (om[i] > 0) 
+            {
+                omCurrentStreak++;
+                if (omCurrentStreak > omMaxStreak) 
+                {
+                    omMaxStreak = omCurrentStreak;
+                }
+            } 
+            else 
+            {
+                omCurrentStreak = 0;
+            }
+
+            if (addy[i] > 0) 
+            {
+                addyCurrentStreak++;
+                if (addyCurrentStreak > addyMaxStreak) 
+                {
+                    addyMaxStreak = addyCurrentStreak;
+                }
+            } 
+            else 
+            {
+                addyCurrentStreak = 0;
+            }
+        }
+
+        if (omMaxStreak > addyMaxStreak) 
+        {
+            printf("Om\n");
+        } 
+        else if (omMaxStreak < addyMaxStreak) 
+        {
+            printf("Addy\n");
+        } 
+        else 
+        {
+            printf("Draw\n");
+        }
+    }
+    return 0;
+}
