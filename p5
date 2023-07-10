@@ -1,0 +1,42 @@
+https://www.codechef.com/problems/CNDY?tab=statement
+#include <stdio.h>
+
+int main(void) {
+    int t;
+    scanf("%d", &t);
+
+    while (t--) {
+        int n;
+        scanf("%d", &n);
+        
+        int m = n * 2;
+        int arr[m];
+        for (int i = 0; i < m; i++) {
+            scanf("%d", &arr[i]);
+        }
+        
+        int freq = 0; 
+        
+        for (int i = 0; i < m; i++) {
+            freq = 0; 
+            
+            for (int j = 0; j < m; j++) {
+                if (arr[j] == arr[i]) {
+                    freq++;
+                }
+            }
+            
+            if (freq > 2) {
+                break;
+            }
+        }
+        
+        if (freq > 2) {
+            printf("No\n");
+        } else {
+            printf("Yes\n");
+        }
+    }
+
+    return 0;
+}
