@@ -1,0 +1,23 @@
+https://www.codechef.com/problems/URCALC?tab=statement
+#include <stdio.h>
+int main()
+{
+    int a, b;
+    char s;
+    scanf("%d %d %c", &a, &b, &s);
+    switch (s)
+    {
+    case '+':
+        printf("%d\n", a + b);
+        break;
+    case '-':
+        printf("%d\n", a - b);
+        break;
+    case '*':
+        printf("%d\n", a * b);
+        break;
+    default:
+        printf("%f\n", 1.0 * a / b);
+    }
+    return 0;
+}
