@@ -1,0 +1,45 @@
+https://www.codechef.com/problems/CHEFARRP?tab=statement
+#include <stdio.h>
+
+
+int findSubarrays(int arr[], int N) 
+{
+    int count = 0;
+    for (int i = 0; i < N; i++) 
+    {
+        int sum = 0, product = 1;
+        for (int j = i; j < N; j++) 
+        {
+            sum += arr[j];
+            product *= arr[j];
+            if (sum == product) 
+            {
+                count++;
+            }
+        }
+    }
+    return count;
+}
+
+int main() 
+{
+    int T;
+    scanf("%d", &T); 
+
+    while (T--) 
+    {
+        int N;
+        scanf("%d", &N); 
+
+        int arr[N];
+        for (int i = 0; i < N; i++) 
+        {
+            scanf("%d", &arr[i]);
+        }
+
+        int result = findSubarrays(arr, N);
+        printf("%d\n", result);
+    }
+
+    return 0;
+}
