@@ -1,0 +1,43 @@
+https://www.codechef.com/problems/MOZZ
+#include <stdio.h>
+
+int main(void) 
+{
+	// your code goes here
+	int t;
+	scanf("%d",&t);
+	while(t--)
+	{
+	    int x,y,r;
+	    scanf("%d %d %d",&x,&y,&r);
+	    
+	    int a;
+	    a=r/30;
+	    
+	    if(a==0)
+	    {
+	        if(x%y != 0)
+	        {
+	            printf("%d\n",(x/y)+1);
+	        }
+	        else
+	        {
+	            printf("%d\n",x/y);
+	        }
+	    }
+	    int b=x+a;
+	    if(a!=0)
+	    {
+	        if(b%y != 0)
+	        {
+	            printf("%d\n",(b/y)+1);
+	        }
+	        else
+	        {
+	            printf("%d\n",b/y);
+	        }
+	    }
+	}
+	return 0;
+}
+
