@@ -1,0 +1,31 @@
+https://www.codechef.com/problems/ODDPAIRS?tab=statement
+#include <stdio.h>
+
+int main() 
+{
+    int T;
+    scanf("%d", &T);
+
+    while (T--) 
+    {
+        int N;
+        scanf("%d", &N);
+        int count = 0; 
+
+        for (int A = 1; A <= N; A++) 
+        {
+            for (int B = 1; B <= N; B++) 
+            {
+            
+                if ((A + B) % 2 != 0) 
+                {
+                    count++;
+                }
+            }
+        }
+
+        printf("%d\n", count);
+    }
+
+    return 0;
+}
