@@ -1,0 +1,41 @@
+https://www.codechef.com/problems/RECIPE?tab=statement
+#include <stdio.h>
+
+// Function to find the greatest common divisor (GCD) using Euclidean algorithm
+int gcd(int a, int b) {
+    if (b == 0)
+        return a;
+    return gcd(b, a % b);
+}
+
+// Function to reduce the recipe and print the result
+void reduceRecipe(int n, int ingredients[]) {
+    int common_factor = ingredients[0];
+    for (int i = 1; i < n; i++) {
+        common_factor = gcd(common_factor, ingredients[i]);
+    }
+
+    for (int i = 0; i < n; i++) {
+        printf("%d ", ingredients[i] / common_factor);
+    }
+    printf("\n");
+}
+
+int main() {
+    int T;
+    scanf("%d", &T);
+
+    while (T--) {
+        int N;
+        scanf("%d", &N);
+
+        int ingredients[N];
+        for (int i = 0; i < N; i++) {
+            scanf("%d", &ingredients[i]);
+        }
+
+        reduceRecipe(N, ingredients);
+    }
+
+    return 0;
+}
