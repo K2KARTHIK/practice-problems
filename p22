@@ -1,0 +1,27 @@
+https://www.codechef.com/problems/WEIGHTBL?tab=submissions
+#include <stdio.h>
+
+int main(void) 
+{
+	// your code goes here
+	int t;
+	scanf("%d",&t);
+	while(t--)
+	{
+	    int w1,w2,x1,x2,m;
+	    scanf("%d %d %d %d %d",&w1,&w2,&x1,&x2,&m);
+	    
+	    int w=w2-w1;
+	    
+	    if(w>=(x1*m)&&w<=(x2*m))
+	    {
+	        printf("1\n");
+	    }
+	    else
+	    {
+	        printf("0\n");
+	    }
+	}
+	return 0;
+}
+
