@@ -1,0 +1,22 @@
+https://www.codechef.com/problems/BLITZ3_2?tab=statement
+#include <stdio.h>
+#include <math.h>
+
+int main() 
+{
+    int T, N, A, B, i;
+    scanf("%d", &T);
+
+    for (i = 0; i < T; i++) 
+    {
+        scanf("%d %d %d", &N, &A, &B);
+
+        int totalTime = 2 * (180 + N);
+        int remainingTime = A + B;
+        int duration = totalTime - remainingTime;
+
+        printf("%d\n", duration);
+    }
+
+    return 0;
+}
