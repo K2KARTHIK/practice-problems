@@ -1,0 +1,21 @@
+https://www.codechef.com/problems/EASYPERM?tab=statement
+#include <stdio.h>
+
+int main(void) 
+{
+	// your code goes here
+	int y;
+	scanf("%d",&y);
+	while(y--)
+	{
+	    int n;
+	    scanf("%d",&n);
+	    for(int i=n;i>0;i--)
+	    {
+	        printf("%d ",i);
+	    }
+	    printf("\n");
+	}
+	return 0;
+}
+
