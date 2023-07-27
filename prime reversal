@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include<string.h>
+#include<stdlib.h>
+int main(void)
+{
+    int t,i,n;
+    scanf("%d",&t);
+    while(t--)
+    {
+        scanf("%d",&n);
+        int c=0,v=0;
+        char a[n],b[n];
+        scanf("%s%s",a,b);
+        for(i=0;i<n;i++)
+        {
+            if(a[i]=='1')  c++;
+            if(b[i]=='1')   v++;
+        }
+        if(c==v) printf("yes\n");
+        else    printf("no\n");
+    }
+	
+	return 0;
+}
