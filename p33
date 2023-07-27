@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main(void) {
+    int t;
+    scanf("%d",&t);
+    while(t--){
+        int x,y,z;
+        scanf("%d%d%d",&x,&y,&z);
+        if(x>=y){
+            printf("PIZZA\n");
+        }
+        else if(x<y&&x<z){
+            printf("NOTHING\n");
+        }
+        else {
+            printf("BURGER\n");
+        }
+    }
+    
+	
+	return 0;
+}
