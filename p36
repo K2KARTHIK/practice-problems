@@ -1,0 +1,18 @@
+https://www.codechef.com/problems/EQCARDGAME
+#include <stdio.h>
+
+int main(void) 
+{
+	// your code goes here
+	int t;
+	scanf("%d",&t);
+	while(t--)
+	{
+	    int k;
+	    scanf("%d",&k);
+	    int ans=52%k;
+	    printf("%d\n",ans);
+	}
+	return 0;
+}
+
