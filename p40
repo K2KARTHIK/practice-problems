@@ -1,0 +1,21 @@
+https://www.codechef.com/problems/FODCHAIN
+#include <stdio.h>
+
+int main(void) 
+{
+	int t;
+	scanf("%d",&t);
+	while(t--)
+	{
+	    int e,k;
+	    scanf("%d %d",&e,&k);
+	    int x=0,count=0;
+	    while(e!=0)
+	    {
+	        x=e/k;
+	        e=e/k;
+	        count++;
+	    }
+	    printf("%d\n",count);
+	}
+}
