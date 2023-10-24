@@ -1,0 +1,12 @@
+https://www.codechef.com/START104D/problems/DOUBLERENT
+#include <stdio.h>
+
+int main(void) 
+{
+	// your code goes here
+	int x;
+	scanf("%d",&x);
+	int ans=2*x;
+	printf("%d",ans);
+	return 0;
+}
