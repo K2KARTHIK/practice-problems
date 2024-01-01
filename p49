@@ -1,0 +1,20 @@
+https://www.codechef.com/problems/HOLES?tab=statement
+#include <stdio.h>
+#include<string.h>
+
+int main(void) {
+	int t,i,j;
+	scanf("%d",&t);
+	for(i=0;i<t;i++){
+	    int c=0;
+	    char s[100];
+	    scanf("%s",s);
+	    for(j=0;j<strlen(s);j++){
+	        if(s[j]=='A'||s[j]=='D'||s[j]=='O'||s[j]=='P'||s[j]=='R'||s[j]=='Q'){
+	            c+=1;}
+	            if(s[j]=='B'){
+	                c+=2;}}
+	                printf("%d\n",c);
+	}
+	return 0;
+}
