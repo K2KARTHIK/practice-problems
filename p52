@@ -1,0 +1,41 @@
+https://www.codechef.com/problems/FARAWAY?tab=statement
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) 
+{
+    long t;
+    scanf("%ld", &t);
+
+    while (t--) 
+    {
+        long long n, m;
+        scanf("%lld %lld", &n, &m);
+
+        int arr[n];
+
+        for (long i = 0; i < n; i++) 
+        {
+            scanf("%d", &arr[i]);
+        }
+
+        long ans = 0;
+        long mvalue = 0;
+
+        for (long i = 0; i < n; i++) 
+        {
+            if (arr[i] > m / 2) {
+                mvalue = abs(arr[i] - 1);
+            } else {
+                mvalue = abs(arr[i] - m);
+            }
+
+            ans = ans + mvalue;
+            mvalue = 0;
+        }
+
+        printf("%ld\n", ans);
+    }
+
+    return 0;
+}
