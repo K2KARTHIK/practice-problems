@@ -1,0 +1,96 @@
+https://www.codechef.com/START115D/problems/APLUSB
+#include <stdio.h>
+
+int main(void) 
+{
+    int t;
+    scanf("%d", &t);
+
+    while(t--)
+    {
+        int n;
+        scanf("%d", &n);
+
+        int arr[n];
+        for(int i = 0; i < n; i++)
+        {
+            scanf("%d", &arr[i]);
+        }
+
+        int arr1[n];
+        for(int i = 0; i < n; i++)
+        {
+            scanf("%d", &arr1[i]);
+        }
+
+        // Sorting arr in ascending order
+        for (int i = 0; i < n - 1; i++) 
+        {
+            for (int j = 0; j < n - i - 1; j++) 
+            {
+                if (arr[j] > arr[j + 1]) 
+                {
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+               }
+            }
+        }
+
+        // Sorting arr1 in descending order
+        for (int i = 0; i < n - 1; i++) 
+        {
+            for (int j = 0; j < n - i - 1; j++) 
+            {
+                if (arr1[j] < arr1[j + 1]) 
+                {
+                    int temp = arr1[j];
+                    arr1[j] = arr1[j + 1];
+                    arr1[j + 1] = temp;
+               }
+            }
+        }
+
+        // Create a new array to store the sum of corresponding elements
+        int sumArray[n];
+        for(int i = 0; i < n; i++)
+        {
+            sumArray[i] = arr[i] + arr1[i];
+        }
+
+        // Check if all elements of sumArray are equal
+        int flag = 1;
+        for (int i = 1; i < n; i++)
+        {
+            if (sumArray[i] != sumArray[i - 1])
+            {
+                flag = 0;
+                break;
+            }
+        }
+
+        // Print the result
+        if (flag)
+        {
+            // Print ascending order of arr
+            for(int i = 0; i < n; i++)
+            {
+                printf("%d ", arr[i]);
+            }
+            printf("\n");
+
+            // Print descending order of arr1
+            for(int i = 0; i < n; i++)
+            {
+                printf("%d ", arr1[i]);
+            }
+            printf("\n");
+        }
+        else
+        {
+            printf("-1\n");
+        }
+    }
+
+    return 0;
+}
