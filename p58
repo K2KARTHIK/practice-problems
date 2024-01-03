@@ -1,0 +1,37 @@
+https://www.codechef.com/problems/ADACRA?tab=statement
+#include <stdio.h>
+#include <string.h>
+
+int minFlips(char crayons[], int n) {
+    int flips = 0;
+
+    for (int i = 1; i < n; i++) {
+        if (crayons[i] != crayons[i - 1]) {
+            flips++;
+        }
+    }
+
+    // If the last crayon is not pointing in the desired direction, one more flip is needed
+    if (crayons[n - 1] != crayons[0]) {
+        flips++;
+    }
+
+    return flips / 2; // Each flip fixes two consecutive crayons
+}
+
+int main() {
+    int T;
+    scanf("%d", &T);
+
+    while (T--) {
+        char crayons[51]; // Assuming maximum length N is 50
+        scanf("%s", crayons);
+
+        int N = strlen(crayons);
+        int result = minFlips(crayons, N);
+
+        printf("%d\n", result);
+    }
+
+    return 0;
+}
