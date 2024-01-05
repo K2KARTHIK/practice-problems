@@ -1,0 +1,48 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) 
+{
+    int t;
+    scanf("%d", &t);
+
+    while (t--)
+    {
+        int n;
+        scanf("%d", &n);
+        int arr[n];
+        int max_value = 0;
+        for (int i = 0; i < n; i++) {
+            scanf("%d", &arr[i]);
+            if (arr[i] > max_value) {
+                max_value = arr[i];
+            }
+        }
+
+        // Dynamically allocate frequency array
+        int* freq = (int*)calloc((max_value + 1), sizeof(int));
+
+        for (int i = 0; i < n; i++)
+        {
+            freq[arr[i]]++;  
+        }
+
+        int mfreq = 0;
+
+       
+        for (int i = 0; i <= max_value; i++)
+        {
+            if (freq[i] > mfreq)
+            {
+                mfreq = freq[i];
+            }
+        }
+
+        printf("%d\n", n - mfreq);
+
+        
+        free(freq);
+    }
+
+    return 0;
+}
