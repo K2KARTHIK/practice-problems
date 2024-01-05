@@ -1,0 +1,26 @@
+https://www.codechef.com/problems/CHSERVE?tab=statement
+#include <stdio.h>
+
+int main(void) {
+    int t;
+    scanf("%d", &t);
+
+    while (t--) {
+        int p1, p2, k;
+        scanf("%d %d %d", &p1, &p2, &k);
+
+        int total_points = p1 + p2;
+        int serves = total_points / k;
+
+        if (serves % 2 == 0) 
+        {
+            printf("CHEF\n");
+        } 
+        else 
+        {
+            printf("COOK\n");
+        }
+    }
+
+    return 0;
+}
