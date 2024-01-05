@@ -1,0 +1,28 @@
+https://www.codechef.com/problems/ODDEVENBS?tab=statement
+#include <stdio.h>
+
+
+int main(void) {
+	int t=0;
+	scanf("%d",&t);
+	while(t--){
+	    int n=0;
+	    scanf("%d",&n);
+	    int b[n];
+	    int sum=0;
+	    for(int i=0;i<n;i++){
+	        scanf("%d ",&b[i]);
+	        sum+=b[i];
+	    }
+	    if(sum%2==0 && n%2==0){
+	        printf("YES\n");
+	    }
+	    else if(sum%2!=0 && n%2!=0){
+	        printf("YES\n");
+	    }
+	    else{
+	        printf("NO\n");
+	    }
+	}
+	return 0;
+}
