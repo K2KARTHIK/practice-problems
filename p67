@@ -1,0 +1,45 @@
+#include <stdio.h>
+
+int main() {
+    int T;
+    scanf("%d", &T);
+
+    while (T--) {
+        int N;
+        scanf("%d", &N);
+
+        int front[N], back[N];
+
+        for (int i = 0; i < N; i++) {
+            scanf("%d", &front[i]);
+        }
+
+        for (int i = 0; i < N; i++) {
+            scanf("%d", &back[i]);
+        }
+
+        int front_possible = 1, back_possible = 1;
+
+        for (int i = 0; i < N; i++) {
+            if (front[i] > back[N - i - 1]) {
+                front_possible = 0;
+            }
+
+            if (front[i] > back[i]) {
+                back_possible = 0;
+            }
+        }
+
+        if (front_possible && back_possible) {
+            printf("both\n");
+        } else if (front_possible) {
+            printf("back\n");
+        } else if (back_possible) {
+            printf("front\n");
+        } else {
+            printf("none\n");
+        }
+    }
+
+    return 0;
+}
