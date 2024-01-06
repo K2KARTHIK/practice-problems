@@ -1,0 +1,44 @@
+https://www.codechef.com/problems/ABSTRING?tab=statement
+#include<stdio.h>
+int main()
+{
+    int t;
+    scanf("%d",&t);
+    while(t--)
+    {
+        int n;
+        scanf("%d",&n);
+        char s[n];
+        scanf("%s",s);
+        char c = 'a';
+        int count ;
+        int check = 0;
+        
+        
+        for( c; c<= 'z' ; c++)
+        {
+            count = 0;
+            for(int j=0; s[j] != '\0'; j++)
+            {
+                if( s[j] == c)
+                count ++;
+            }
+            if( count != 0 && count % 2 != 0)
+            {
+                check ++;
+                break;
+            }
+        }
+        
+        
+        if(check == 0)
+        {
+            printf("YES\n");
+        }
+        else
+        {
+            printf("NO\n");
+            
+        }
+    }
+}
