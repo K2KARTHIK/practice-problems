@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include<math.h>
+
+int main(void) {
+	int t;
+	scanf("%d",&t);
+	while(t--){
+	    int n;
+	    scanf("%d",&n);
+	    float out;
+	    int count=0;
+	    int res;
+	    if(n==1){
+	        printf("1\n");
+	    }
+	    else{
+	        while(n>=1){
+	            out=pow(n,0.5);
+	            res=floor(out);
+	            count+=1;
+	            n=n-(pow(res,2));
+	        }
+	        printf("%d\n",count);
+	    }
+	}
+	return 0;
+}
