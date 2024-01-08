@@ -1,0 +1,20 @@
+https://www.codechef.com/problems/EUREKA?tab=statement
+#include <stdio.h>
+#include <math.h>
+
+int main(void) 
+{
+    // your code goes here
+    int t;
+    scanf("%d", &t);
+    while (t--)
+    {
+        float n;
+        scanf("%f", &n);
+        float r = pow(0.143 * n, n);
+        int roundedValue = (int)round(r); // Round off the float and cast to an integer
+        printf("%d\n", roundedValue);
+    }
+
+    return 0;
+}
