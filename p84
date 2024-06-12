@@ -1,0 +1,25 @@
+https://www.codechef.com/START138D/problems/DISTSUB
+#include <stdio.h>
+
+int canFormIslands(int N, int K) {
+    long long sumOfK = (long long) K * (K + 1) / 2; 
+    long long minRequiredLength = sumOfK + (K - 1); 
+    return minRequiredLength <= N;
+}
+
+int main() {
+    int T;
+    scanf("%d", &T); 
+
+    while (T--) {
+        int N, K;
+        scanf("%d %d", &N, &K); 
+
+        if (canFormIslands(N, K)) {
+            printf("YES\n");
+        } else {
+            printf("NO\n");
+        }
+    }
+    return 0;
+}
